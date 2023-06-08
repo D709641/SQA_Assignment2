@@ -146,5 +146,50 @@ namespace TriangleUnitTesting
             // Assert
             Assert.AreEqual("A SCALENE triangle is formed", result);
         }
+
+        [Test]
+        public void ZeroLengthSide_Input0and4and5_ReturnsInvalidTriangle()
+        {
+            // Arrange
+            int side1 = 0;
+            int side2 = 4;
+            int side3 = 5;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            Assert.AreEqual("Invalid Triangle - at least one side is zero", result);
+        }
+
+        [Test]
+        public void ZeroLengthSide_Input3and0and7_ReturnsInvalidTriangle()
+        {
+            // Arrange
+            int side1 = 3;
+            int side2 = 0;
+            int side3 = 7;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            Assert.AreEqual("Invalid Triangle - at least one side is zero", result);
+        }
+
+        [Test]
+        public void ZeroLengthSide_Input2and1and0_ReturnsInvalidTriangle()
+        {
+            // Arrange
+            int side1 = 2;
+            int side2 = 1;
+            int side3 = 0;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            Assert.AreEqual("Invalid Triangle - at least one side is zero", result);
+        }
     }
 }
