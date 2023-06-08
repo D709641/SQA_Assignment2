@@ -191,5 +191,50 @@ namespace TriangleUnitTesting
             // Assert
             Assert.AreEqual("Invalid Triangle - at least one side is zero", result);
         }
+
+        [Test]
+        public void InvalidResponse_Input1and2and3_ReturnsInvalidTriangle()
+        {
+            // Arrange
+            int side1 = 1;
+            int side2 = 2;
+            int side3 = 3;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            Assert.AreEqual("INVALID Triangle detected!!", result);
+        }
+
+        [Test]
+        public void InvalidResponse_Input5and2and1_ReturnsInvalidTriangle()
+        {
+            // Arrange
+            int side1 = 5;
+            int side2 = 2;
+            int side3 = 1;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            Assert.AreEqual("INVALID Triangle detected!!", result);
+        }
+
+        [Test]
+        public void InvalidResponse_Input10and8and2_ReturnsInvalidTriangle()
+        {
+            // Arrange
+            int side1 = 10;
+            int side2 = 8;
+            int side3 = 2;
+
+            // Act
+            string result = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            Assert.AreEqual("INVALID Triangle detected!!", result);
+        }
     }
 }
